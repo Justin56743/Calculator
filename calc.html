@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <style>
+            #main{
+                width: 300px;
+                height: 300px;
+                background-color: #f1f1f1;
+                margin: 10 auto;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input{
+                width: 50px;
+                height: 50px;
+                margin: 6px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            #k{
+                width: 250px;
+                height: 50px;
+                margin: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <form name="f">
+                <input type="text" name="t" placeholder="0" id="k"> <br>
+                <input type="button" value="1" onclick="f.t.value+=1">
+                <input type="button" value="2" onclick="f.t.value+=2">
+                <input type="button" value="3" onclick="f.t.value+=3">
+                <input type="button" value="+" onclick="add()">
+                <br>
+                <input type="button" value="4" onclick="f.t.value+=4">
+                <input type="button" value="5" onclick="f.t.value+=5">
+                <input type="button" value="6" onclick="f.t.value+=6">
+                <input type="button" value="-" onclick="sub()">
+                <br>
+                <input type="button" value="7" onclick="f.t.value+=7">
+                <input type="button" value="8" onclick="f.t.value+=8">
+                <input type="button" value="9" onclick="f.t.value+=9">
+                <input type="button" value="/" onclick="div()">
+                <br>
+                <input type="button" value="c" onclick="f.t.value=''">
+                <input type="button" value="0" onclick="f.t.value+=0">
+                <input type="button" value="=" onclick="f.t.value=eval(f.t.value)">
+                <input type="button" value="X" onclick="mul()">
+                <br>
+            </form>
+
+        </div>
+
+        <script>
+            function add(){
+                var act=0, b=0;
+            act= f.t.value;
+            b=act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.t.value=act.substring(0,act.length-1);
+                f.t.value+='+';
+            }
+            else{
+                f.t.value+='+';
+            }
+            }
+            
+            function sub(){
+                var act=0, b=0;
+            act= f.t.value;
+            b=act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.t.value=act.substring(0,act.length-1);
+                f.t.value+='-';
+            }
+            else{
+                f.t.value+='-';
+            }
+            }
+            
+            function mul(){
+                var act=0, b=0;
+            act= f.t.value;
+            b=act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.t.value=act.substring(0,act.length-1);
+                f.t.value+='*';
+            }
+            else{
+                f.t.value+='*';
+            }
+            }
+            
+            function div(){
+                var act=0, b=0;
+            act= f.t.value;
+            b=act.charAt(act.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.t.value=act.substring(0,act.length-1);
+                f.t.value+='/';
+            }
+            else{
+                f.t.value+='/';
+            }
+            }
+            
+        </script>
+    </body>
+</html>
